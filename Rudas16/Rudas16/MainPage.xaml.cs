@@ -16,8 +16,6 @@ namespace Rudas16
         public MainPage()
         {
             InitializeComponent();
-            
-
         }
 
         private const string BaseUrl = "https://api-multi-sharonr11s-projects.vercel.app/musica";
@@ -50,8 +48,6 @@ namespace Rudas16
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-
-
             try
             {
                 var result = await GetAsync<MusicApiResponse>("https://api-multi-sharonr11s-projects.vercel.app/musica");
@@ -73,34 +69,15 @@ namespace Rudas16
                 Artist = txtArtist.Text,
                 Duration = txtDuration.Text,
                 ReleaseDate = DatePicker.Date,
-                ImageUrl = txtImageUrl.Text
             };
             var canciones = (List<Song>)cancionesListView.ItemsSource;
 
-            // Agregar la nueva canción a la lista
             canciones.Add(nuevaCancion);
 
-            // Actualizar la vista del ListView con la nueva lista de canciones
-            cancionesListView.ItemsSource = null; // Limpiar el ListView
+            cancionesListView.ItemsSource = null;
             cancionesListView.ItemsSource = canciones;
 
         }
-        private void Eliminar_Clicked(object sender, EventArgs e)
-        {
-            var botonEliminar = (Button)sender;
-            var cancionAEliminar = (Song)botonEliminar.CommandParameter;
-
-            // Obtener la lista actual de canciones del ListView
-            var canciones = (List<Song>)cancionesListView.ItemsSource;
-
-            // Eliminar la canción seleccionada de la lista
-            canciones.Remove(cancionAEliminar);
-
-            // Actualizar la vista del ListView con la nueva lista de canciones
-            cancionesListView.ItemsSource = null; // Limpiar el ListView
-            cancionesListView.ItemsSource = canciones; // Asignar la nueva lista de canciones
-        }
-
 
 
     }

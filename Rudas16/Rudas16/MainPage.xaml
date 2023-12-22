@@ -3,14 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Rudas16.MainPage">
-
     <StackLayout>
         <DatePicker x:Name="DatePicker" />
         <Entry Placeholder="Enter Title" x:Name="txtTitle" HorizontalOptions="FillAndExpand"/>
         <Entry Placeholder="Enter Artist" x:Name="txtArtist" HorizontalOptions="FillAndExpand"/>
         <Entry Placeholder="Enter Duration" x:Name="txtDuration" HorizontalOptions="FillAndExpand"/>
-        <Entry Placeholder="Enter Image URL" x:Name="txtImageUrl" HorizontalOptions="FillAndExpand"/>
-        
+                
         <StackLayout Orientation="Horizontal">
             <Button Text="Save" Clicked="Crear_Clicked"/>
         </StackLayout>
@@ -27,7 +25,6 @@
                                 <Label Text="{Binding Artist}" FontSize="Small" />
                                 <Label Text="{Binding Duration}" FontSize="Small" />
                                 <Label Text="{Binding ReleaseDate, StringFormat='Released: {0:dd/MM/yyyy}'}" FontSize="Small" />
-                                <!-- Agrega aquí más etiquetas para mostrar otros detalles de la canción -->
                             </StackLayout>
 
                         </StackLayout>
